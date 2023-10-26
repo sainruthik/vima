@@ -1,3 +1,36 @@
+Metadata-Version: 2.1
+Name: vima-bench
+Version: 0.0.1
+Summary: research project
+Author: VIMA-Bench Developers
+License: Apache License, Version 2.0
+Keywords: Deep Learning,Machine Learning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pybullet
+Requires-Dist: gym==0.21.0
+Requires-Dist: einops
+Requires-Dist: dm-tree
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: psutil
+Requires-Dist: opencv-python
+Requires-Dist: matplotlib
+Requires-Dist: imageio
+Requires-Dist: transforms3d
+Requires-Dist: kornia
+Requires-Dist: einops
+Requires-Dist: hydra-core
+Requires-Dist: tqdm
+Requires-Dist: black
+Requires-Dist: av
+Requires-Dist: importlib_resources
+
 # VIMA-Bench: Benchmark for Multimodal Robot Learning
 ## ICML 2023
 <div align="center">
@@ -19,7 +52,7 @@ ______________________________________________________________________
 VIMA-Bench is a newly introduced task suite and benchmark for learning general robot manipulation with multimodal prompts. It features 17 representative tasks with multimodal prompt templates, which can be procedurally instantiated into thousands of individual instances by various combinations of textures and tabletop objects. It also establishes a 4-level protocol to evaluate progressively stronger generalization capabilities, from randomized object placement to novel tasks altogether. Finally, it provides a massive imitation dataset with 650K successful trajectories and multimodal prompts to learn general robot manipulation.
 
 # Installation
-VIMA-Bench requires Python ≥ 3.9. We have tested on Ubuntu 20.04 and Mac OS X. Installing VIMA-Bench is as simple as:
+VIMA-Bench requires Python â‰¥ 3.9. We have tested on Ubuntu 20.04 and Mac OS X. Installing VIMA-Bench is as simple as:
 
 ```bash
 git clone https://github.com/vimalabs/VimaBench && cd VimaBench
@@ -147,7 +180,7 @@ python3 scripts/data_generation/run.py num_episodes_per_task={num_trajs_to_gener
 ```
 
 # Training Data
-We also release an offline dataset with 650K trajectories conditioned on multimodal prompts to learn general robot manipulation. Our dataset is hosted on [🤗Hugging Face](https://huggingface.co/datasets/VIMA/VIMA-Data).
+We also release an offline dataset with 650K trajectories conditioned on multimodal prompts to learn general robot manipulation. Our dataset is hosted on [ðŸ¤—Hugging Face](https://huggingface.co/datasets/VIMA/VIMA-Data).
 
 After download and unzip, data are grouped into different tasks. Within each trajectory's folder, there are two folders `rgb_front` and `rgb_top`, and three files `obs.pkl`, `action.pkl`, and `trajectory.pkl`. RGB frames from a certain perspective are separately stored in corresponding folder. `obs.pkl` includes segmentation and state of end effector. `action.pkl` contains oracle actions. `trajectory.pkl` contains meta information such as elapsed steps, task information, and object information. Users can build their custom data piepline starting from here.
 
